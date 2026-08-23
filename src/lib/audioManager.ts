@@ -3,7 +3,38 @@
 // Global audio instance singleton for synchronous user-gesture playback on iOS/Mobile browsers
 let globalAudio: HTMLAudioElement | null = null;
 let isAudioPlaying = false;
+let wasPlayingBeforeHide = false;
+let isVisibilityListenerAttached = false;
+
 const listeners = new Set<(playing: boolean) => void>();
+
+function attachVisibilityListeners() {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+  if (isVisibilityListenerAttached) return;
+  isVisibilityListenerAttached = true;
+
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      if (isAudioPlaying) {
+        wasPlayingBeforeHide = true;
+        pauseAudioDirectly();
+      }
+    } else {
+      if (wasPlayingBeforeHide) {
+        wasPlayingBeforeHide = false;
+        playAudioDirectly();
+      }
+    }
+  };
+
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("pagehide", () => {
+    if (isAudioPlaying) {
+      wasPlayingBeforeHide = true;
+      pauseAudioDirectly();
+    }
+  });
+}
 
 export function getAudioInstance(): HTMLAudioElement | null {
   if (typeof window === "undefined") return null;
@@ -14,6 +45,7 @@ export function getAudioInstance(): HTMLAudioElement | null {
     globalAudio.setAttribute("playsinline", "true");
     globalAudio.setAttribute("webkit-playsinline", "true");
     globalAudio.preload = "auto";
+    attachVisibilityListeners();
   }
   return globalAudio;
 }
@@ -52,6 +84,7 @@ export function pauseAudioDirectly() {
 
 export function toggleAudioDirectly(): boolean {
   if (isAudioPlaying) {
+    wasPlayingBeforeHide = false;
     pauseAudioDirectly();
   } else {
     playAudioDirectly();
