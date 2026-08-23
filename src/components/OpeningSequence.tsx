@@ -155,7 +155,7 @@ export default function OpeningSequence({ onComplete, onStartOpen }: { onComplet
             <p className="text-champagne/50 uppercase tracking-[0.3em] sm:tracking-[0.5em] text-[10px] sm:text-xs font-sans mb-4 sm:mb-6">
               With the blessings of the Almighty
             </p>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif text-gold-gradient drop-shadow-[0_2px_30px_rgba(197,160,89,0.5)] leading-tight">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-serif text-gold-gradient font-medium tracking-wide drop-shadow-[0_2px_30px_rgba(197,160,89,0.5)] leading-tight">
               Harris Rahul
               <span className="text-lg sm:text-2xl md:text-3xl italic font-light text-lavender mx-3 sm:mx-4">&amp;</span>
               Sri Priya

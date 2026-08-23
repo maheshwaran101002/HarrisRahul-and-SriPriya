@@ -63,9 +63,12 @@ export default function BrideGroomSection() {
 
             </div>
 
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
-              J. Harris Rahul, B.Com., MBA.,
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-gold-gradient font-medium tracking-wide mb-1">
+              J. Harris Rahul
             </h3>
+            <span className="text-antique-gold/90 font-sans text-xs sm:text-sm tracking-widest font-light uppercase mb-3 inline-block">
+              B.Com., MBA.
+            </span>
             <p className="text-champagne/50 uppercase tracking-[0.3em] text-[10px] sm:text-xs font-sans mb-4 sm:mb-6">
               The Groom
             </p>
@@ -101,14 +104,17 @@ export default function BrideGroomSection() {
 
             </div>
 
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
-              Dr. K. Sri Priya, BDS.,
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-gold-gradient font-medium tracking-wide mb-1">
+              Dr. K. Sri Priya
             </h3>
+            <span className="text-antique-gold/90 font-sans text-xs sm:text-sm tracking-widest font-light uppercase mb-3 inline-block">
+              BDS.
+            </span>
             <p className="text-champagne/50 uppercase tracking-[0.3em] text-[10px] sm:text-xs font-sans mb-4 sm:mb-6">
               The Bride
             </p>
             <p className="text-champagne/60 font-sans text-xs sm:text-sm leading-relaxed max-w-xs">
-              Daughter of (Late) Mr. K. Kannan &amp; Mrs. K. Uma
+              Daughter of (Late) Mr. P. V. Kannan &amp; Mrs. K. Uma
             </p>
           </motion.div>
         </div>
