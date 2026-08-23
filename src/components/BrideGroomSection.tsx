@@ -62,10 +62,7 @@ export default function BrideGroomSection() {
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
-              {/* Crown icon */}
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl drop-shadow-[0_0_10px_rgba(197,160,89,0.5)]">
-                👑
-              </div>
+
             </div>
             
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
@@ -103,10 +100,7 @@ export default function BrideGroomSection() {
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
-              {/* Flower icon */}
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl drop-shadow-[0_0_10px_rgba(203,164,216,0.5)]">
-                🌸
-              </div>
+
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
