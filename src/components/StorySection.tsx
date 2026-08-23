@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const STORY_CARDS = [
   {
-    image: "/assets/wedding/couple.jpeg",
-    objectPosition: "object-[center_15%]",
+    image: "/assets/wedding/new_image.jpeg",
+    objectPosition: "object-center",
     tag: "The Couple",
     title: "Two Hearts Met",
     description: "Two souls coming together to begin a beautiful new journey.",
