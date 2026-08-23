@@ -26,6 +26,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Harris Rahul & Sri Priya — Wedding Invitation',
   description: 'Join us to celebrate the wedding of Harris Rahul and Sri Priya on Sunday, 13 September 2026 at Arulmigu Tiruvengadamudayan Temple.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({

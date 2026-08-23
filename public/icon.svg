@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E132B"/>
+      <stop offset="100%" stop-color="#0A0510"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6D3"/>
+      <stop offset="30%" stop-color="#E5C37A"/>
+      <stop offset="70%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#9B7631"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bg)" stroke="url(#gold)" stroke-width="8"/>
+  <circle cx="256" cy="256" r="226" fill="none" stroke="url(#gold)" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+
+  <!-- Diya Flame at top center -->
+  <path d="M256,80 Q268,110 256,128 Q244,110 256,80 Z" fill="#FFA500" filter="url(#glow)"/>
+  <path d="M256,90 Q262,110 256,124 Q250,110 256,90 Z" fill="#FFE494"/>
+
+  <!-- Intertwined Gold Rings / Monogram Motif -->
+  <g stroke="url(#gold)" fill="none" stroke-width="12" filter="url(#glow)">
+    <circle cx="210" cy="265" r="72" opacity="0.85"/>
+    <circle cx="302" cy="265" r="72" opacity="0.85"/>
+  </g>
+
+  <!-- Monogram Initials "H & S" -->
+  <text x="256" y="286" font-family="'Georgia', 'Times New Roman', serif" font-size="82" font-weight="bold" fill="url(#gold)" text-anchor="middle" letter-spacing="1">H&amp;S</text>
+
+  <!-- Decorative Bottom Flourish -->
+  <path d="M190,370 Q256,400 322,370 Q256,382 190,370 Z" fill="url(#gold)" opacity="0.8"/>
+</svg>
