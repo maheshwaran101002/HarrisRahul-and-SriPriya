@@ -79,7 +79,7 @@ export default function Countdown() {
         </h3>
         
         {/* Responsive Grid for mobile devices */}
-        <div className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-12 text-gold-gradient font-serif max-w-3xl mx-auto">
+        <div className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-12 font-serif max-w-3xl mx-auto">
           {[
             { label: "Days", value: timeLeft.days },
             { label: "Hours", value: timeLeft.hours },
@@ -87,10 +87,10 @@ export default function Countdown() {
             { label: "Seconds", value: timeLeft.seconds },
           ].map((item, idx) => (
             <div key={idx} className="flex flex-col items-center justify-center relative group interactive py-2">
-              <span className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl mb-2 sm:mb-4 font-light tabular-nums leading-none drop-shadow-2xl transition-transform duration-500 group-hover:scale-110">
+              <span className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl mb-2 sm:mb-4 font-light tabular-nums leading-none text-[#F0D78C] drop-shadow-[0_4px_20px_rgba(197,160,89,0.5)] transition-transform duration-500 group-hover:scale-110">
                 {String(item.value).padStart(2, '0')}
               </span>
-              <span className="text-[9px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.4em] uppercase text-champagne/70 font-sans">
+              <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.4em] uppercase text-champagne/80 font-sans font-medium">
                 {item.label}
               </span>
             </div>

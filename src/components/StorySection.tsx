@@ -7,24 +7,28 @@ import Image from "next/image";
 const STORY_CARDS = [
   {
     image: "/assets/wedding/couple.jpeg",
+    objectPosition: "object-[center_15%]",
     tag: "The Couple",
     title: "Two Hearts Met",
     description: "Two souls coming together to begin a beautiful new journey.",
   },
   {
     image: "/assets/wedding/groom_cropped.jpg",
+    objectPosition: "object-[center_10%]",
     tag: "The Groom",
     title: "Harris Rahul",
     description: "Stepping into a new chapter with love and family blessings.",
   },
   {
     image: "/assets/wedding/FSP06952.jpg.jpeg",
+    objectPosition: "object-[center_15%]",
     tag: "The Bride",
     title: "Sri Priya",
     description: "Embracing a new beginning with grace and happiness.",
   },
   {
     image: "/assets/wedding/ring_photo_1.jpeg",
+    objectPosition: "object-center",
     tag: "The Promise",
     title: "Forever Begins",
     description: "Bound by love, tradition, and sacred vows.",
@@ -157,7 +161,7 @@ export default function StorySection() {
                     src={STORY_CARDS[currentCard].image}
                     alt={STORY_CARDS[currentCard].title}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${STORY_CARDS[currentCard].objectPosition || "object-center"}`}
                     sizes="380px"
                   />
                   {/* Tag badge */}
