@@ -7,39 +7,27 @@ import Image from "next/image";
 const STORY_CARDS = [
   {
     image: "/assets/wedding/couple.jpeg",
-    tag: "The Beginning",
+    tag: "The Couple",
     title: "Two Hearts Met",
-    description: "In the tapestry of fate, Harris Rahul and Sri Priya's paths crossed — guided by family traditions and blessed by divine providence.",
+    description: "Two souls coming together to begin a beautiful new journey.",
   },
   {
     image: "/assets/wedding/groom_cropped.jpg",
     tag: "The Groom",
-    title: "Strength & Honor",
-    description: "Harris Rahul steps into this sacred journey with devotion, responsibility, and the heartfelt warmth of his beloved family.",
+    title: "Harris Rahul",
+    description: "Stepping into a new chapter with love and family blessings.",
   },
   {
     image: "/assets/wedding/FSP06952.jpg.jpeg",
     tag: "The Bride",
-    title: "Grace & Elegance",
-    description: "Dr. K. Sri Priya embodies timeless charm and light, bringing warmth and joy to the beginning of their shared lifetime.",
+    title: "Dr. K. Sri Priya",
+    description: "Embracing a new beginning with grace and happiness.",
   },
   {
-    image: "/assets/wedding/wedding_mandapam.png",
-    tag: "The Mandapam",
-    title: "Auspicious Union",
-    description: "Under the floral grand mandapam, amidst sacred chants and glowing lamps, two families unite in traditional celebration.",
-  },
-  {
-    image: "/assets/wedding/main_couple_portrait.png",
-    tag: "The Vow",
-    title: "Symphony of Love",
-    description: "Adorned in silk and gold garlands, hand-in-hand they embark on a lifelong promise of companionship, trust, and shared dreams.",
-  },
-  {
-    image: "/assets/wedding/grand_temple.png",
-    tag: "Forever",
-    title: "A Lifetime Together",
-    description: "Blessed by elders and surrounded by temple sanctity, Harris Rahul and Sri Priya look forward to celebrating 13th September 2026.",
+    image: "/assets/wedding/ring_photo_1.jpeg",
+    tag: "The Promise",
+    title: "Forever Begins",
+    description: "Bound by love, tradition, and sacred vows.",
   },
 ];
 
