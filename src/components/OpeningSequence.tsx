@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
+import { playAudioDirectly } from "@/lib/audioManager";
+
 export default function OpeningSequence({ onComplete, onStartOpen }: { onComplete: () => void, onStartOpen?: () => void }) {
   const [stage, setStage] = useState(0);
   const [doorsOpen, setDoorsOpen] = useState(false);
@@ -79,6 +81,8 @@ export default function OpeningSequence({ onComplete, onStartOpen }: { onComplet
   }, []);
 
   const handleOpen = () => {
+    // Trigger audio synchronously within user gesture context for mobile/Vercel support
+    playAudioDirectly();
     if (onStartOpen) onStartOpen();
     setDoorsOpen(true);
     setTimeout(onComplete, 2500);
