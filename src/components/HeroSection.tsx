@@ -45,14 +45,14 @@ export default function HeroSection() {
 
         {/* Scrolling invitation line at top */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 2 }}
-          className="absolute top-6 sm:top-10 left-0 right-0 z-30 text-center"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1.5 }}
+          className="absolute top-5 sm:top-8 left-0 right-0 z-30 text-center px-4"
         >
-          <p className="text-champagne/30 uppercase tracking-[0.4em] sm:tracking-[0.6em] text-[9px] sm:text-[10px] font-sans">
+          <span className="inline-block text-gold-gradient font-sans font-medium uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[10px] sm:text-xs bg-void/70 backdrop-blur-md px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-antique-gold/40 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
             You are cordially invited to the wedding of
-          </p>
+          </span>
         </motion.div>
 
         {/* Main typography */}
