@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Heart {
@@ -9,76 +9,111 @@ interface Heart {
   y: number;
   size: number;
   color: string;
+  symbol: string;
 }
 
 const HEART_COLORS = [
   "text-pink-400",
   "text-rose-400",
-  "text-pink-300",
+  "text-amber-300",
   "text-red-400",
   "text-rose-300",
+  "text-yellow-200",
 ];
 
-const HEART_SYMBOLS = ["❤", "💕", "💗", "♥"];
+const HEART_SYMBOLS = ["❤", "💕", "💗", "♥", "💖"];
 
 export default function FloatingHearts() {
   const [hearts, setHearts] = useState<Heart[]>([]);
 
-  useEffect(() => {
-    let lastTime = 0;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      // Throttle to ~every 100ms and 70% chance
-      if (now - lastTime < 100) return;
-      if (Math.random() > 0.7) return;
-      lastTime = now;
-
-      setHearts((prev) => [
-        ...prev.slice(-20),
-        {
-          id: now + Math.random(),
-          x: e.clientX,
-          y: e.clientY,
-          size: 14 + Math.random() * 16,
-          color: HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)],
-        },
-      ]);
+  const addHeart = useCallback((x: number, y: number) => {
+    const newHeart: Heart = {
+      id: Date.now() + Math.random(),
+      x,
+      y,
+      size: 14 + Math.random() * 18,
+      color: HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)],
+      symbol: HEART_SYMBOLS[Math.floor(Math.random() * HEART_SYMBOLS.length)],
     };
 
-    // Also support touch for mobile
-    const handleTouch = (e: TouchEvent) => {
-      const now = Date.now();
-      if (now - lastTime < 150) return;
-      lastTime = now;
-      const touch = e.touches[0];
-      if (!touch) return;
-
-      setHearts((prev) => [
-        ...prev.slice(-20),
-        {
-          id: now + Math.random(),
-          x: touch.clientX,
-          y: touch.clientY,
-          size: 14 + Math.random() * 16,
-          color: HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)],
-        },
-      ]);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("touchmove", handleTouch, { passive: true });
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("touchmove", handleTouch);
-    };
+    setHearts((prev) => [...prev.slice(-35), newHeart]);
   }, []);
 
-  // Auto-clean old hearts
+  useEffect(() => {
+    let lastMoveTime = 0;
+    let lastScrollTime = 0;
+
+    // Mouse / Pointer Move (Web Hovering Everywhere)
+    const handlePointerMove = (e: PointerEvent) => {
+      const now = Date.now();
+      if (now - lastMoveTime < 60) return;
+      lastMoveTime = now;
+      addHeart(e.clientX, e.clientY);
+    };
+
+    // Touch Move / Touch Start (Mobile Scrolling & Touching)
+    const handleTouchMove = (e: TouchEvent) => {
+      const now = Date.now();
+      if (now - lastMoveTime < 80) return;
+      lastMoveTime = now;
+      const touch = e.touches[0];
+      if (touch) {
+        addHeart(touch.clientX, touch.clientY);
+      }
+    };
+
+    // Scroll Event (Triggers hearts continuously as user scrolls on mobile & web)
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastScrollTime < 120) return;
+      lastScrollTime = now;
+
+      // Spawn random hearts near center & sides during scroll
+      const randomX = Math.random() * window.innerWidth;
+      const randomY = window.innerHeight * 0.4 + Math.random() * (window.innerHeight * 0.5);
+      addHeart(randomX, randomY);
+    };
+
+    // Click / Tap Event (Burst of hearts on click)
+    const handleClick = (e: MouseEvent) => {
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          addHeart(
+            e.clientX + (Math.random() * 40 - 20),
+            e.clientY + (Math.random() * 40 - 20)
+          );
+        }, i * 60);
+      }
+    };
+
+    // Ambient floating hearts drifting up naturally in the background
+    const ambientInterval = setInterval(() => {
+      if (Math.random() > 0.4) {
+        const x = Math.random() * window.innerWidth;
+        const y = window.innerHeight + 20;
+        addHeart(x, y);
+      }
+    }, 800);
+
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("click", handleClick, { passive: true });
+
+    return () => {
+      clearInterval(ambientInterval);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleClick);
+    };
+  }, [addHeart]);
+
+  // Clean old hearts automatically
   useEffect(() => {
     const interval = setInterval(() => {
-      setHearts((prev) => prev.filter((h) => Date.now() - h.id < 2000));
-    }, 500);
+      setHearts((prev) => prev.filter((h) => Date.now() - h.id < 2200));
+    }, 400);
     return () => clearInterval(interval);
   }, []);
 
@@ -90,25 +125,25 @@ export default function FloatingHearts() {
             key={heart.id}
             initial={{
               opacity: 0.9,
-              scale: 0.3,
+              scale: 0.4,
               x: heart.x - heart.size / 2,
               y: heart.y - heart.size / 2,
             }}
             animate={{
               opacity: 0,
-              scale: 1.2,
+              scale: 1.3,
               x: heart.x + (Math.random() * 60 - 30),
-              y: heart.y - 120 - Math.random() * 80,
+              y: heart.y - 140 - Math.random() * 80,
             }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.8, ease: "easeOut" }}
-            className={`absolute ${heart.color} drop-shadow-[0_0_6px_rgba(244,114,182,0.5)]`}
+            transition={{ duration: 2.0, ease: "easeOut" }}
+            className={`absolute ${heart.color} drop-shadow-[0_0_8px_rgba(244,114,182,0.6)]`}
             style={{
               fontSize: `${heart.size}px`,
               pointerEvents: "none",
             }}
           >
-            {HEART_SYMBOLS[Math.floor(Math.random() * HEART_SYMBOLS.length)]}
+            {heart.symbol}
           </motion.div>
         ))}
       </AnimatePresence>
