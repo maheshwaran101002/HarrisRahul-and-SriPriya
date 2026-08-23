@@ -41,23 +41,21 @@ export default function HeroSection() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(197,160,89,0.15)_0%,transparent_70%)] pointer-events-none z-20 transform-gpu" />
 
         {/* Subtle top & bottom gradients for perfect contrast & alignment */}
-        <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-void/90 via-void/40 to-transparent pointer-events-none transform-gpu h-36" />
+        <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-void/80 via-void/20 to-transparent pointer-events-none transform-gpu h-28" />
         <div className="absolute inset-0 z-20 bg-gradient-to-t from-void via-void/40 to-transparent pointer-events-none transform-gpu" />
 
-        {/* Top invitation badge - perfectly aligned in upper floral zone */}
+        {/* Top invitation text - seamlessly blended floating gold typography */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1.5 }}
-          className="absolute top-3 sm:top-5 left-0 right-0 z-30 flex justify-center px-4"
+          className="absolute top-4 sm:top-7 left-0 right-0 z-30 flex items-center justify-center gap-3 sm:gap-5 px-6 pointer-events-none"
         >
-          <div className="inline-flex items-center gap-2 sm:gap-3 bg-void/85 backdrop-blur-md px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-antique-gold/50 shadow-[0_4px_25px_rgba(0,0,0,0.9)] max-w-[92%] sm:max-w-none">
-            <div className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-            <span className="text-gold-gradient font-sans font-medium uppercase tracking-[0.16em] sm:tracking-[0.35em] text-[9px] sm:text-xs whitespace-nowrap">
-              You are cordially invited to the wedding of
-            </span>
-            <div className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-          </div>
+          <div className="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-antique-gold/80" />
+          <span className="text-gold-gradient font-serif italic text-[11px] sm:text-xs tracking-[0.2em] sm:tracking-[0.35em] uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] text-center">
+            You are cordially invited to the wedding of
+          </span>
+          <div className="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent to-antique-gold/80" />
         </motion.div>
 
         {/* Main typography */}
