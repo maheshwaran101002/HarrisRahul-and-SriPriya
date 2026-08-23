@@ -11,12 +11,10 @@ export default function BrideGroomSection() {
   return (
     <section ref={sectionRef} className="relative py-24 sm:py-32 md:py-40 bg-void overflow-hidden">
       {/* Cinematic Lighting VFX */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vh] bg-temple-purple/15 rounded-full blur-[150px]" />
-        
-        {/* Dynamic Light Leaks */}
-        <div className="absolute top-[10%] right-[-20%] w-[60%] h-[60%] bg-[#c5a059] opacity-0 blur-[120px] mix-blend-screen pointer-events-none z-0 animate-[lightLeak_10s_infinite_ease-in-out_2s]" />
-        <div className="absolute bottom-[-10%] left-[-20%] w-[50%] h-[50%] bg-[#cba4d8] opacity-0 blur-[100px] mix-blend-overlay pointer-events-none z-0 animate-[lightLeak_15s_infinite_reverse]" />
+      <div className="absolute inset-0 pointer-events-none transform-gpu">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vh] bg-[radial-gradient(circle,rgba(45,20,61,0.25)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] bg-[radial-gradient(circle,rgba(197,160,89,0.12)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[radial-gradient(circle,rgba(203,164,216,0.12)_0%,transparent_70%)] pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">

@@ -1,33 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.fromTo(textRef.current,
-      { y: 40, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 1,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        }
-      }
-    );
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
     <footer ref={sectionRef} className="relative w-full overflow-hidden flex flex-col items-center justify-center py-16 sm:py-24">
@@ -43,8 +22,12 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-t from-void via-void/80 to-void" />
       </div>
 
-      <div ref={textRef} className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
-        
+      <motion.div 
+        initial={{ y: 40, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 container mx-auto px-4 sm:px-6 text-center"
+      >
         {/* Diya */}
         <div className="flex justify-center mb-8 sm:mb-12">
           <div className="relative flex flex-col items-center">
@@ -86,7 +69,7 @@ export default function Footer() {
             <div className="absolute inset-0 bg-champagne translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
           </a>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

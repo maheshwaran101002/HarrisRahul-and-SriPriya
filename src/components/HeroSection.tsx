@@ -37,15 +37,15 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Light Leaks VFX */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#f5e6d3] opacity-0 blur-[100px] mix-blend-overlay pointer-events-none z-20 animate-[lightLeak_8s_infinite]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#c5a059] opacity-0 blur-[100px] mix-blend-screen pointer-events-none z-20 animate-[lightLeak_12s_infinite_reverse_4s]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(245,230,211,0.15)_0%,transparent_70%)] pointer-events-none z-20 transform-gpu" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(197,160,89,0.15)_0%,transparent_70%)] pointer-events-none z-20 transform-gpu" />
 
         {/* Cinematic gradient overlays */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-void via-void/50 to-transparent" />
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-void/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-void via-void/50 to-transparent pointer-events-none transform-gpu" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-void/30 via-transparent to-transparent pointer-events-none transform-gpu" />
         
         {/* Subtle side vignette */}
-        <div className="absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,5,16,0.5)_100%)]" />
+        <div className="absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,5,16,0.5)_100%)] pointer-events-none transform-gpu" />
 
         {/* Scrolling invitation line at top */}
         <motion.div

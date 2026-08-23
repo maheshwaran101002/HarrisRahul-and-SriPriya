@@ -20,7 +20,7 @@ const STORY_CARDS = [
   {
     image: "/assets/wedding/FSP06952.jpg.jpeg",
     tag: "The Bride",
-    title: "Dr. K. Sri Priya",
+    title: "Sri Priya",
     description: "Embracing a new beginning with grace and happiness.",
   },
   {
@@ -74,38 +74,11 @@ export default function StorySection() {
   return (
     <section ref={sectionRef} className="relative py-24 sm:py-32 md:py-40 bg-void overflow-hidden">
       {/* Cinematic Background Light Leaks */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-[#e5c37a] opacity-0 blur-[150px] mix-blend-overlay animate-[lightLeak_14s_infinite_ease-in-out]" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-[#c5a059] opacity-0 blur-[130px] mix-blend-screen animate-[lightLeak_11s_infinite_reverse_3s]" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 transform-gpu">
+        <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-[radial-gradient(circle,rgba(229,195,122,0.12)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] bg-[radial-gradient(circle,rgba(197,160,89,0.12)_0%,transparent_70%)] pointer-events-none" />
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [0, -200 - Math.random() * 200],
-              x: [0, (Math.random() - 0.5) * 100],
-              opacity: [0, 0.4, 0],
-            }}
-            transition={{
-              duration: 5 + Math.random() * 5,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeOut",
-            }}
-            className="absolute rounded-full"
-            style={{
-              left: `${10 + Math.random() * 80}%`,
-              top: `${50 + Math.random() * 40}%`,
-              width: `${2 + Math.random() * 4}px`,
-              height: `${2 + Math.random() * 4}px`,
-              background: `radial-gradient(circle, rgba(229,195,122,0.6) 0%, transparent 70%)`,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
@@ -215,11 +188,10 @@ export default function StorySection() {
             <button
               key={idx}
               onClick={() => { setDirection(idx > currentCard ? 1 : -1); setCurrentCard(idx); }}
-              className={`transition-all duration-500 rounded-full interactive cursor-pointer ${
-                idx === currentCard
+              className={`transition-all duration-500 rounded-full interactive cursor-pointer ${idx === currentCard
                   ? "w-6 sm:w-8 h-2 bg-antique-gold"
                   : "w-2 h-2 bg-champagne/20 hover:bg-champagne/40"
-              }`}
+                }`}
             />
           ))}
         </div>
