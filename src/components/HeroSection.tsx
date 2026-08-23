@@ -40,19 +40,24 @@ export default function HeroSection() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(245,230,211,0.15)_0%,transparent_70%)] pointer-events-none z-20 transform-gpu" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(197,160,89,0.15)_0%,transparent_70%)] pointer-events-none z-20 transform-gpu" />
 
-        {/* Crisp bottom gradient overlay for typography readability */}
+        {/* Subtle top & bottom gradients for perfect contrast & alignment */}
+        <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-void/90 via-void/40 to-transparent pointer-events-none transform-gpu h-36" />
         <div className="absolute inset-0 z-20 bg-gradient-to-t from-void via-void/40 to-transparent pointer-events-none transform-gpu" />
 
-        {/* Scrolling invitation line at top */}
+        {/* Top invitation badge - perfectly aligned in upper floral zone */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1.5 }}
-          className="absolute top-5 sm:top-8 left-0 right-0 z-30 text-center px-4"
+          className="absolute top-3 sm:top-5 left-0 right-0 z-30 flex justify-center px-4"
         >
-          <span className="inline-block text-gold-gradient font-sans font-medium uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[10px] sm:text-xs bg-void/70 backdrop-blur-md px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-antique-gold/40 shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            You are cordially invited to the wedding of
-          </span>
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-void/85 backdrop-blur-md px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-antique-gold/50 shadow-[0_4px_25px_rgba(0,0,0,0.9)] max-w-[92%] sm:max-w-none">
+            <div className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+            <span className="text-gold-gradient font-sans font-medium uppercase tracking-[0.16em] sm:tracking-[0.35em] text-[9px] sm:text-xs whitespace-nowrap">
+              You are cordially invited to the wedding of
+            </span>
+            <div className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
+          </div>
         </motion.div>
 
         {/* Main typography */}
