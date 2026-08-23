@@ -55,20 +55,6 @@ export default function Footer() {
           <br /><br />
           <span className="text-gold-gradient font-serif tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm">With Love</span>
         </p>
-        
-        <div className="mt-12 sm:mt-20">
-          <a 
-            href="/assets/Harris weds Sripriya - Padding 8 (Frame Type).pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-block relative overflow-hidden group interactive border border-champagne/20 rounded-full px-6 sm:px-8 py-3"
-          >
-            <span className="relative z-10 font-sans text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-champagne group-hover:text-void transition-colors duration-500">
-              View Original Invitation
-            </span>
-            <div className="absolute inset-0 bg-champagne translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-          </a>
-        </div>
       </motion.div>
     </footer>
   );
