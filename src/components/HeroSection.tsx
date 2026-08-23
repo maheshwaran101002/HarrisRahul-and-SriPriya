@@ -68,15 +68,15 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 2, ease: "easeOut" }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-gold-gradient drop-shadow-[0_2px_30px_rgba(197,160,89,0.5)] tracking-wide leading-none">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-wedding-script text-gold-gradient drop-shadow-[0_4px_30px_rgba(197,160,89,0.6)] tracking-wide leading-tight py-1">
               Harris Rahul
             </h1>
-            <div className="flex items-center justify-center gap-4 sm:gap-6 my-3 sm:my-4 md:my-5">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 my-2 sm:my-3">
               <div className="h-[1px] w-12 sm:w-20 md:w-28 bg-gradient-to-r from-transparent to-antique-gold/50" />
-              <span className="text-xl sm:text-2xl md:text-3xl italic font-light text-lavender font-serif">&amp;</span>
+              <span className="text-2xl sm:text-4xl italic font-light text-lavender font-serif">&amp;</span>
               <div className="h-[1px] w-12 sm:w-20 md:w-28 bg-gradient-to-l from-transparent to-antique-gold/50" />
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-gold-gradient drop-shadow-[0_2px_30px_rgba(197,160,89,0.5)] tracking-wide leading-none">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-wedding-script text-gold-gradient drop-shadow-[0_4px_30px_rgba(197,160,89,0.6)] tracking-wide leading-tight py-1">
               Sri Priya
             </h1>
           </motion.div>

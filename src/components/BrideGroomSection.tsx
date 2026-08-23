@@ -63,7 +63,7 @@ export default function BrideGroomSection() {
 
             </div>
 
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-gold-gradient font-medium tracking-wide mb-1">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-wedding-script text-gold-gradient tracking-wide mb-1 py-1">
               J. Harris Rahul
             </h3>
             <span className="text-antique-gold/90 font-sans text-xs sm:text-sm tracking-widest font-light uppercase mb-3 inline-block">
@@ -104,7 +104,7 @@ export default function BrideGroomSection() {
 
             </div>
 
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-gold-gradient font-medium tracking-wide mb-1">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-wedding-script text-gold-gradient tracking-wide mb-1 py-1">
               Dr. K. Sri Priya
             </h3>
             <span className="text-antique-gold/90 font-sans text-xs sm:text-sm tracking-widest font-light uppercase mb-3 inline-block">

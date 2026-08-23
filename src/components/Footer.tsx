@@ -39,11 +39,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-gold-gradient mb-6 sm:mb-8 drop-shadow-2xl leading-tight">
-          HARRIS RAHUL
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-wedding-script text-gold-gradient mb-6 sm:mb-8 drop-shadow-2xl leading-relaxed py-1">
+          Harris Rahul
           <br />
-          <span className="text-2xl sm:text-3xl md:text-5xl italic font-light text-lavender my-2 sm:my-4 block">&amp;</span>
-          SRI PRIYA
+          <span className="text-2xl sm:text-4xl italic font-serif text-champagne/80 my-1 sm:my-2 block font-light">&amp;</span>
+          Sri Priya
         </h2>
 
         <p className="text-champagne/80 font-sans tracking-[0.3em] sm:tracking-[0.4em] uppercase text-xs sm:text-sm mb-10 sm:mb-16">
