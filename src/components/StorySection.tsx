@@ -9,31 +9,37 @@ const STORY_CARDS = [
     image: "/assets/wedding/couple.jpeg",
     tag: "The Beginning",
     title: "Two Hearts Met",
-    description: "In the tapestry of fate, two hearts found each other — bound by tradition and blessed by the divine.",
+    description: "In the tapestry of fate, Harris Rahul and Sri Priya's paths crossed — guided by family traditions and blessed by divine providence.",
+  },
+  {
+    image: "/assets/wedding/groom_cropped.jpg",
+    tag: "The Groom",
+    title: "Strength & Honor",
+    description: "Harris Rahul steps into this sacred journey with devotion, responsibility, and the heartfelt warmth of his beloved family.",
   },
   {
     image: "/assets/wedding/FSP06952.jpg.jpeg",
     tag: "The Bride",
-    title: "Grace & Beauty",
-    description: "Adorned in gold and silk, she carries the warmth of tradition and the light of a new beginning.",
+    title: "Grace & Elegance",
+    description: "Dr. K. Sri Priya embodies timeless charm and light, bringing warmth and joy to the beginning of their shared lifetime.",
   },
   {
-    image: "/assets/wedding/IMG_4773.JPG.jpeg",
-    tag: "The Groom",
-    title: "Strength & Honor",
-    description: "Stepping into a new chapter with responsibility, love, and the blessings of his family.",
+    image: "/assets/wedding/wedding_mandapam.png",
+    tag: "The Mandapam",
+    title: "Auspicious Union",
+    description: "Under the floral grand mandapam, amidst sacred chants and glowing lamps, two families unite in traditional celebration.",
   },
   {
-    image: "/assets/wedding/ring_photo_1.jpeg",
-    tag: "The Promise",
-    title: "A Sacred Bond",
-    description: "With rings as eternal symbols of love, they promised to walk together through every season of life.",
+    image: "/assets/wedding/main_couple_portrait.png",
+    tag: "The Vow",
+    title: "Symphony of Love",
+    description: "Adorned in silk and gold garlands, hand-in-hand they embark on a lifelong promise of companionship, trust, and shared dreams.",
   },
   {
-    image: "/assets/wedding/IMG_0863.PNG",
+    image: "/assets/wedding/grand_temple.png",
     tag: "Forever",
-    title: "Together as One",
-    description: "Two families united, two souls intertwined — a love story written in the stars, celebrated with joy.",
+    title: "A Lifetime Together",
+    description: "Blessed by elders and surrounded by temple sanctity, Harris Rahul and Sri Priya look forward to celebrating 13th September 2026.",
   },
 ];
 
@@ -144,6 +150,22 @@ export default function StorySection() {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative flex justify-center items-center h-[500px] sm:h-[560px] md:h-[620px] perspective-[1200px]"
         >
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => paginate(-1)}
+            className="absolute left-1 sm:left-4 md:left-12 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-ivory/10 border border-champagne/20 backdrop-blur-sm flex items-center justify-center text-champagne text-xl sm:text-2xl hover:bg-champagne/20 hover:text-ivory transition-all cursor-pointer shadow-lg"
+            aria-label="Previous Slide"
+          >
+            ‹
+          </button>
+          <button
+            onClick={() => paginate(1)}
+            className="absolute right-1 sm:right-4 md:right-12 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-ivory/10 border border-champagne/20 backdrop-blur-sm flex items-center justify-center text-champagne text-xl sm:text-2xl hover:bg-champagne/20 hover:text-ivory transition-all cursor-pointer shadow-lg"
+            aria-label="Next Slide"
+          >
+            ›
+          </button>
+
           {/* Card Stack effect - background cards */}
           <div className="absolute w-[280px] sm:w-[340px] md:w-[380px] h-[420px] sm:h-[480px] md:h-[520px] rounded-2xl bg-ivory/5 border border-champagne/10 translate-y-3 translate-x-2 rotate-3 pointer-events-none" />
           <div className="absolute w-[280px] sm:w-[340px] md:w-[380px] h-[420px] sm:h-[480px] md:h-[520px] rounded-2xl bg-ivory/3 border border-champagne/5 translate-y-6 translate-x-4 rotate-6 pointer-events-none" />
