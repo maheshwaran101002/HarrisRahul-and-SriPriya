@@ -79,13 +79,13 @@ html, body {
   inset: 0;
   pointer-events: none;
   z-index: 9996;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(5, 2, 10, 0.65) 100%);
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(5, 2, 10, 0.25) 100%);
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
 
 .cinematic-grade {
-  filter: contrast(1.05) brightness(0.95) sepia(0.1) saturate(1.1);
+  filter: contrast(1.02) brightness(1.0) saturate(1.05);
 }
 
 /* Custom Utilities */
