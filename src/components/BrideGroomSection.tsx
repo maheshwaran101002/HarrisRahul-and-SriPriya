@@ -55,10 +55,10 @@ export default function BrideGroomSection() {
               {/* Photo container */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-antique-gold/40 shadow-[0_0_40px_rgba(197,160,89,0.15)] group-hover:shadow-[0_0_60px_rgba(197,160,89,0.25)] transition-shadow duration-700">
                 <Image
-                  src="/assets/wedding/IMG_4773.JPG.jpeg"
+                  src="/assets/wedding/groom_cropped.jpg"
                   alt="Harris Rahul - The Groom"
                   fill
-                  className="object-cover object-[center_20%] group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
