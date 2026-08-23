@@ -35,7 +35,7 @@ export default function BrideGroomSection() {
 
         {/* Bride & Groom Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-24 max-w-5xl mx-auto">
-          
+
           {/* Groom Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -62,15 +62,15 @@ export default function BrideGroomSection() {
               </div>
 
             </div>
-            
+
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
-              Harris Rahul
+              J. Harris Rahul, B.Com., MBA.,
             </h3>
             <p className="text-champagne/50 uppercase tracking-[0.3em] text-[10px] sm:text-xs font-sans mb-4 sm:mb-6">
               The Groom
             </p>
             <p className="text-champagne/60 font-sans text-xs sm:text-sm leading-relaxed max-w-xs">
-              Son of Mr. K. Jaya Balaji &amp; Mrs. J. Mohanasundari
+              Son of Mr. K. Jaya Balaji &amp; Mrs. J. Mohanapriya
             </p>
           </motion.div>
 
@@ -102,13 +102,13 @@ export default function BrideGroomSection() {
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gold-gradient mb-2 sm:mb-3">
-              Dr. K. Sri Priya
+              Dr. K. Sri Priya, BDS.,
             </h3>
             <p className="text-champagne/50 uppercase tracking-[0.3em] text-[10px] sm:text-xs font-sans mb-4 sm:mb-6">
               The Bride
             </p>
             <p className="text-champagne/60 font-sans text-xs sm:text-sm leading-relaxed max-w-xs">
-              Daughter of Er. K. Kannan &amp; Mrs. K. Uma
+              Daughter of (Late) Mr. K. Kannan &amp; Mrs. K. Uma
             </p>
           </motion.div>
         </div>
