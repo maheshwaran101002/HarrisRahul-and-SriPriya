@@ -44,6 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Playfair+Display:ital,wght@1,500;1,600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${cormorantGaramond.variable} ${dmSans.variable} font-sans antialiased bg-[#0a0510] text-[#f8f5f0] cinematic-grade`}
       >
