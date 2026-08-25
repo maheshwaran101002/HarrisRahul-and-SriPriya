@@ -43,100 +43,62 @@ export default function Reception() {
           </div>
 
           <p className="text-champagne/50 uppercase tracking-[0.4em] sm:tracking-[0.6em] text-[10px] sm:text-xs font-sans mb-3 sm:mb-4">
-            The Evening Celebrations
+            The Evening Celebration
           </p>
           
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-ivory mb-8 sm:mb-12 drop-shadow-[0_0_30px_rgba(197,160,89,0.3)]">
-            Pre-Wedding &amp; Reception
+          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-ivory mb-8 sm:mb-12 drop-shadow-[0_0_40px_rgba(197,160,89,0.3)]">
+            Reception
           </h2>
 
-          {/* Event Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full max-w-4xl mb-8 sm:mb-12">
-            
-            {/* Pre-Wedding Function Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="bg-void/40 backdrop-blur-lg rounded-2xl border border-champagne/15 p-6 sm:p-8 flex flex-col justify-between shadow-[0_0_50px_rgba(0,0,0,0.3)] hover:border-antique-gold/40 transition-colors"
-            >
-              <div>
+          {/* Event card with frosted glass effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="w-full max-w-2xl bg-void/40 backdrop-blur-lg rounded-2xl border border-champagne/10 p-8 sm:p-10 md:p-14 shadow-[0_0_80px_rgba(0,0,0,0.3)]"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 text-champagne">
+              <div className="flex flex-col items-center text-center border-b sm:border-b-0 sm:border-r border-gold-400/15 pb-8 sm:pb-0 sm:pr-8">
+                <div className="text-2xl sm:text-3xl mb-3">📅</div>
+                <span className="text-gold-gradient font-serif text-lg sm:text-xl mb-2 italic">When</span>
+                <p className="font-sans font-light tracking-wider text-sm sm:text-base uppercase">Saturday</p>
+                <p className="font-serif text-2xl sm:text-3xl text-ivory my-2">12 September</p>
+                <p className="font-serif text-lg text-ivory mb-2">2026</p>
+                <div className="w-10 h-[1px] bg-champagne/20 my-3" />
+                <p className="font-sans font-light tracking-[0.15em] text-xs opacity-70">6:00 PM Onwards</p>
+              </div>
+              
+              <div className="flex flex-col items-center text-center pt-8 sm:pt-0 sm:pl-8">
                 <div className="text-2xl sm:text-3xl mb-3">✨</div>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-antique-gold font-sans font-medium mb-1 block">
-                  Grand Evening Celebration
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-ivory mb-3">
-                  Pre-Wedding Function
-                </h3>
-                <p className="font-serif text-lg sm:text-xl text-champagne/90 mb-1">
-                  Saturday, 12 September 2026
+                <span className="text-gold-gradient font-serif text-lg sm:text-xl mb-2 italic">Where</span>
+                <p className="font-serif text-xl sm:text-2xl text-ivory my-2 leading-snug">
+                  Thappa Gardens<br/>Resort
                 </p>
-                <p className="font-sans font-light tracking-[0.15em] text-xs opacity-80 text-champagne mb-6">
-                  6:00 PM Onwards
-                </p>
-
-                <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-champagne/20 to-transparent mb-6" />
-
-                <p className="font-serif text-xl text-gold-gradient mb-1">
-                  Thappa Gardens Resort
-                </p>
-                <p className="font-sans font-light text-xs tracking-[0.12em] opacity-70 text-champagne leading-relaxed">
-                  Main Road, Ariyakudi<br />Karaikkudi
+                <div className="w-10 h-[1px] bg-champagne/20 my-3" />
+                <p className="font-sans font-light tracking-wide text-xs opacity-70 leading-relaxed">
+                  Main Road, Ariyakudi<br/>Karaikkudi
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Reception Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="bg-void/40 backdrop-blur-lg rounded-2xl border border-champagne/15 p-6 sm:p-8 flex flex-col justify-between shadow-[0_0_50px_rgba(0,0,0,0.3)] hover:border-antique-gold/40 transition-colors"
-            >
-              <div>
-                <div className="text-2xl sm:text-3xl mb-3">🎊</div>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-antique-gold font-sans font-medium mb-1 block">
-                  Wedding Reception
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-ivory mb-3">
-                  Reception
-                </h3>
-                <p className="font-serif text-lg sm:text-xl text-champagne/90 mb-1">
-                  Sunday, 13 September 2026
-                </p>
-                <p className="font-sans font-light tracking-[0.15em] text-xs opacity-80 text-champagne mb-6">
-                  9:30 PM Onwards
-                </p>
-
-                <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-champagne/20 to-transparent mb-6" />
-
-                <p className="font-serif text-xl text-gold-gradient mb-1">
-                  Thappa Gardens Resort
-                </p>
-                <p className="font-sans font-light text-xs tracking-[0.12em] opacity-70 text-champagne leading-relaxed">
-                  Main Road, Ariyakudi<br />Karaikkudi
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Directions Button for Thappa Gardens Resort */}
-          <div className="flex justify-center">
-            <a
-              href="https://maps.app.goo.gl/mFyxNRZi8KCuLRe68"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 overflow-hidden rounded-full interactive cursor-pointer shadow-[0_0_30px_rgba(197,160,89,0.3)]"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#D4A843] via-[#F0D78C] to-[#D4A843] rounded-full" />
-              <motion.div
-                animate={{ x: ['-100%', '200%'] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 2 }}
-                className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12"
-              />
-              <span className="relative z-10 font-sans text-xs tracking-[0.2em] uppercase text-void font-medium">📍 Get Directions to Thappa Gardens</span>
-            </a>
-          </div>
+            {/* Directions Button for Thappa Gardens Resort */}
+            <div className="mt-10 sm:mt-12 flex justify-center">
+              <a
+                href="https://maps.app.goo.gl/mFyxNRZi8KCuLRe68"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 overflow-hidden rounded-full interactive cursor-pointer shadow-[0_0_30px_rgba(197,160,89,0.3)]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4A843] via-[#F0D78C] to-[#D4A843] rounded-full" />
+                <motion.div
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 2 }}
+                  className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12"
+                />
+                <span className="relative z-10 font-sans text-xs tracking-[0.2em] uppercase text-void font-medium">📍 Get Directions to Thappa Gardens</span>
+              </a>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

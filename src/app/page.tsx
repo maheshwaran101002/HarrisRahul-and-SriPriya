@@ -67,8 +67,8 @@ export default function Home() {
           <HeroSection />
           <BrideGroomSection />
           <StorySection />
-          <WeddingCeremony />
           <Reception />
+          <WeddingCeremony />
           <Countdown />
           <Footer />
         </div>
